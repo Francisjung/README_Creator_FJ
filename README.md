@@ -56,9 +56,9 @@ Copyright 2023 Francis Jung
 
 ## Tests
 
-no
+none
 
 ## Contact
 
-Francisjung.github.com
+https://github.com/Francisjung
 francisjung17@gmail.com
