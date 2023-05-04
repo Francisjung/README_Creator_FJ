@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const gm = require('generateMarkdown')
+const gm = require('generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -31,32 +31,8 @@ function inquire(){
 }
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    const template = 
-`# ${data[0]}
-
-## Description
-
-- ${data[1]}
-- ${data[0]}
-
-## Table of Contents (Optional)
-
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Features](#features)
-
-## License
-
-${data[7]}
-
-## Features
-
-- ${data[3]}.
-- ${data[4]}.
-- ${data[5]}.
-- ${data[6]}`;
+function writeToFile(fileName, template) {
+    
 fs.writeFile('README.MD', template, (err) =>
   err ? console.error(err) : console.log('Success!')
 );
