@@ -15,24 +15,39 @@ const questions = [
 let answers=[];
 
 function inquire(){
-    // for(let i=0;i<8;i++){
-    //     inquirer.prompt(
-    //         {
-    //         type: 'input',
-    //         message: questions[i],
-    //         name:'question '+i
-    //         }
-    // ).then((response) =>{
-    //     answers.push(response);
-    // });
-    // }
-    inquirer.prompt(
+    inquirer.prompt([
         {
             type: 'input',
             message: questions[0],
             name: 'question 1'
+        },
+        {
+            type: 'input',
+            message: questions[1],
+            name: 'question 2'
+        },
+        {
+            type: 'input',
+            message: questions[2],
+            name: 'question 3'
+        },
+        {
+            type: 'input',
+            message: questions[3],
+            name: 'question 4'
+        },
+        {
+            type: 'input',
+            message: questions[4],
+            name: 'question 5'
+        },
+        {
+            type: 'input',
+            message: questions[5],
+            name: 'question 6'
         }
-    ).then((response)=>{
+
+    ]).then((response)=>{
         answers.push(response);
     })
 }
