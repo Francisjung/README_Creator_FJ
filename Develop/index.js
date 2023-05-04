@@ -1,9 +1,14 @@
-// TODO: Include packages needed for this application
+/*
+Author: Francis Jung
+Date: 5/4/2023
+*/
+
+//Imports necessary files
 const fs = require('fs');
 const inquirer = require('inquirer');
 const gm = require('./utils/generateMarkdown');
 
-// TODO: Create an array of questions for user input
+//An array which holds the questions we will use to parse user input.
 const questions = [
     'What is the name of the project?',
     'Write a short description of the project.',
@@ -16,19 +21,18 @@ const questions = [
     'Enter your email: '
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(data) {
-    let string = gm.generateMarkdown(data);
-fs.writeFile('README.md', string, (err) =>
+//Takes the user input and writes it to a file
+function writeToFile(fileName, data) {
+fs.writeFile(fileName, data, (err) =>
   err ? console.error(err) : console.log('Success!')
 );
 }
 
-// TODO: Create a function to initialize app
 
+//This code is run at the start of the program
 function init() {
 
-    // inquirer prompts answers
+    // Uses the inquirer package to read user input.
     inquirer.prompt([
         {
         //Title
@@ -46,20 +50,20 @@ function init() {
             //Installation
           type: 'input',
           message: questions[2],
-          name: 'installInst',
+          name: 'install',
         },
         {
             //Usage
         type: 'input',
         message: questions[3],
-        name: 'usageInfo',
+        name: 'usage',
     
         },
         {
             //Contributing
         type: 'input',
         message: questions[4],
-        name: 'contriGuide',
+        name: 'contributors',
         
         },
         {
@@ -74,7 +78,7 @@ function init() {
             //Tests
         type: 'input',
         message: questions[6],
-        name: 'testInstr',
+        name: 'tests',
                 
         },
         {
@@ -92,12 +96,12 @@ function init() {
             
         },
       ]).then((response) =>{
+        //Once all user input is collected, the data is passed into the writeToFile function.
     const fileName = "README.md"; 
     
-    //console.log(writeREADME(response));
-    console.log("File Made!")
-    // writes the README file with the provided responses via the inquirer
-    writeToFile(response);
+    console.log("File Created Successfully");
+
+    writeToFile(fileName, gm(response));
     
     });
     
