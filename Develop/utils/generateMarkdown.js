@@ -68,23 +68,32 @@ function generateMarkdown(data) {
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
-  - [Features](#features)
+  - [Tests](#tests)
+  
+  ##Installation
+
+  ${data[2]}
   
   ## Usage
   
-  ${data[2]}
+  ${data[3]}
   
   ## Credits
   
-  ${data[3]}
+  ${data[4]}
   
   ## License
   
-  ${renderLicenseSection(data[4])}
+  ${renderLicenseSection(data[5])}
   
-  ## Features
+  ## Tests
   
-  ${data[5]}
+  ${data[6]}
+
+  ## Contact
+
+  ${data[7]}
+  ${data[8]}
   `;
 }
 
